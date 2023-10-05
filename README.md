@@ -1,6 +1,6 @@
 # PocketPerc
 
-I created this app to explore the boundaries of enums in SwiftUI! It serves as a companion to my talk on the same topic.
+I created this app to explore the boundaries of enums in SwiftUI! It serves as a companion to my talk called ICYMI: Enums Are The Sh*t.
 
 When the recording of the talk is available, I'll link it here 🙂
 
