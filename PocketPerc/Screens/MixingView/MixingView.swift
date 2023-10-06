@@ -208,7 +208,7 @@ extension MixingView {
                 } label: {
                     category.menuOptionTextLabel(selected: filteredCategory == category)
                 }
-                .disabled(!tracks.contains(where: { $0.category == category }))
+                .disabled(!tracks.contains(where: { $0.category == category }) || Set(tracks.map { $0.category }).count == 1)
             }
             
             if filteredCategory != nil {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var mixer: Mixer = Mixer(mix: .empty)
+    @StateObject var mixer: Mixer = Mixer()
     @StateObject var browseManager = BrowseManager()
     @State private var sheetType: SheetType?
     @State private var viewState: ViewState = .welcome

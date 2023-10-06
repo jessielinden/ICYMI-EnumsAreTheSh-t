@@ -127,10 +127,17 @@ extension Mix {
         
         set {
             let oldValue = selectedFills
-            if oldValue.contains(where: { $0.isASurprise }) { // filter out the surprise instance and then update self.tracks
-                updateTracks(with: newValue.filter { !$0.isASurprise }, comparedTo: oldValue)
-            } else {
+            
+            // If a surprise fill is selected, no other fill can be selected. If not, they can all be selected together.
+            // If both oldValue and newValue have a count of 1 and it's a surprise, it's because Mixer.replaceSurpriseIfNeeded() has been called, regenerating a new surprise so that the next time it is played, it's a new surprise.
+            if oldValue.contains(where: { $0.isASurprise }) && newValue.contains(where: { $0.isASurprise }) && newValue.count == 1 {
                 updateTracks(with: newValue, comparedTo: oldValue)
+            } else {
+                if oldValue.contains(where: { $0.isASurprise }) { // forces deselection on the surprise instance (per above note) by filtering it out of the update to self.tracks
+                    updateTracks(with: newValue.filter { !$0.isASurprise }, comparedTo: oldValue)
+                } else {
+                    updateTracks(with: newValue, comparedTo: oldValue)
+                }
             }
         }
     }

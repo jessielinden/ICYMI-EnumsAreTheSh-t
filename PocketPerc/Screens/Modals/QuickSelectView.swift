@@ -46,11 +46,11 @@ struct QuickSelectView: View {
             get: { mix.selectedFills.contains(where: { $0.isASurprise })},
             set: { shouldBeSelected in
                 if !shouldBeSelected {
-                    self.mix.selectedFills = []
+                   mix.selectedFills = []
                 } else {
                     let surprise = Fill.allCases.randomElement()
                     if let surprise {
-                        self.mix.selectedFills = [.surprise(surprise)]
+                        mix.selectedFills = [.surprise(surprise)]
                     }
                 }
             }

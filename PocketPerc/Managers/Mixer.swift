@@ -49,9 +49,7 @@ class Mixer: ObservableObject {
             switch soloMode {
             case .on(let tracks): mix.tracks.forEach {
                 $0.player.updateWasMutedWhenSoloModeWasTurnedOn()
-                if tracks.contains($0) {
-                    $0.player.isMuted = false
-                } else {
+                if !tracks.contains($0) {
                     $0.player.isMuted = true
                 }
             }
@@ -90,7 +88,7 @@ class Mixer: ObservableObject {
         return selectedPlayers
     }
     
-    init(mix: Mix = Mix.sample5) {
+    init(mix: Mix = .empty) {
         self.mix = mix
         
         if let file = click.file {
@@ -163,8 +161,32 @@ class Mixer: ObservableObject {
         }
     }
     
+    /// If a surprise ``Fill`` is selected, it should be regenerated for the next play-thru of the mix, inheriting any modifications to its playback.
+    private func replaceSurpriseIfNeeded() {
+        func copyPlayerAttributes(from old: Track, to new: Track) {
+            new.player.scaledPan = old.player.scaledPan
+            new.player.sliderVolume = old.player.sliderVolume
+            new.player.isMuted = old.player.isMuted
+        }
+        
+        guard mix.selectedFills.count == 1 && mix.selectedFills.contains(where: { $0.isASurprise }) else { return }
+        let old = Array(mix.selectedFills)[0]
+        let surprise = Fill.allCases.randomElement()
+        if let surprise {
+            let oldAsTrack = Fill.asTrack(old)
+            let surpriseAsTrack = Fill.asTrack(.surprise(surprise))
+            if soloMode.tracks.contains(oldAsTrack) {
+                soloMode.tracks.remove(oldAsTrack)
+                soloMode.tracks.insert(surpriseAsTrack)
+            }
+            mix.selectedFills = []
+            mix.tracks.insert(surpriseAsTrack)
+            copyPlayerAttributes(from: oldAsTrack, to: surpriseAsTrack)
+        }
+    }
+    
     /// If the mix is being played at the time the ``BrowseView`` play button is tapped, the mix is paused.
-    func pauseIfNeeded() {
+    public func pauseIfNeeded() {
         switch playbackState {
         case .playing(let currentTime):
             playbackState = .paused(currentTime)
@@ -189,6 +211,7 @@ class Mixer: ObservableObject {
           playbackState = .stopped
           seekFrame = 0
           currentPosition = 0
+          replaceSurpriseIfNeeded()
             
             switch repeatMode {
             case .times(let times, let progress):

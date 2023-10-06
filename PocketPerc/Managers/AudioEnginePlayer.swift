@@ -76,7 +76,7 @@ final class AudioEnginePlayer: ObservableObject, Equatable {
             previousVolume ?? node.volume
         }
         set {
-            node.volume = newValue
+            previousVolume = newValue
             
             if newValue != 0 {
                 previousVolume = newValue
