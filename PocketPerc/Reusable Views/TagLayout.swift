@@ -110,5 +110,5 @@ extension [LayoutSubviews.Element] {
 
 #Preview {
     BrowseView(pauseIfNeeded: {})
-        .environmentObject(Mixer())
+        .environmentObject(BrowseManager())
 }

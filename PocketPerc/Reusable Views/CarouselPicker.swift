@@ -83,5 +83,6 @@ struct CarouselPicker<ContentProvider: CarouselContentProvider, Content: View>: 
     Text("")
         .sheet(isPresented: Binding.constant(true)) {
             SheetView()
+                .environmentObject(BrowseManager())
         }
 }
