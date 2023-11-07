@@ -2,7 +2,7 @@
 
 I created this app to explore the boundaries of enums in SwiftUI! It serves as a companion to my talk called ICYMI: Enums Are The Sh*t.
 
-When the recording of the talk from SwiftLeeds 2023 is available, I'll link it here 🙂
+[You can watch it here](https://www.youtube.com/watch?v=J4s3mraKcag&t=2s)
 
 ## Topic Highlights
 - Representing State
