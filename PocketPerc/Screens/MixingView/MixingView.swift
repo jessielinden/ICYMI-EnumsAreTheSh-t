@@ -223,7 +223,7 @@ extension MixingView {
 }
 
 #Preview("ContentView") {
-    let mixer = Mixer()
+    let mixer = Mixer(mix: Mix.sample3)
     return MixingView(mixer: mixer, sheetType: Binding.constant(.edit(mixer)))
         .preferredColorScheme(.dark)
 }
