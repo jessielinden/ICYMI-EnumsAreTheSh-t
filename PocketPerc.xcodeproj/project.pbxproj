@@ -134,7 +134,7 @@
 		63228D922A9D88D900439062 /* keys.wurlie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = keys.wurlie.mp3; sourceTree = "<group>"; };
 		63228D932A9D88D900439062 /* guitar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guitar.mp3; sourceTree = "<group>"; };
 		63228D942A9D88D900439062 /* guiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guiro.mp3; sourceTree = "<group>"; };
-		6325BC202AAEAF990042123C /* marimba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = marimba.mp3; path = "../../../../../Dropbox/Jessie Thing/Individual Tracks (Full)/marimba.mp3"; sourceTree = "<group>"; };
+		6325BC202AAEAF990042123C /* marimba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = marimba.mp3; sourceTree = "<group>"; };
 		6339D9582AACD9AE002BC435 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		63529CE82A5F2AB7008548B0 /* TrackControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackControls.swift; sourceTree = "<group>"; };
 		636995DF29F9677A00C37D87 /* PocketPerc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketPerc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,8 +195,8 @@
 		63DAFEE32AAEA6060049C243 /* short_vibraphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_vibraphone.mp3; sourceTree = "<group>"; };
 		63DAFEE42AAEA6060049C243 /* short_keys.EP.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_keys.EP.mp3; sourceTree = "<group>"; };
 		63DAFEE52AAEA6060049C243 /* short_drums.club.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_drums.club.mp3; sourceTree = "<group>"; };
-		63DAFF072AAEAEEF0049C243 /* bass.synth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bass.synth.mp3; path = "../../../../../Dropbox/Jessie Thing/Individual Tracks (Full)/bass.synth.mp3"; sourceTree = "<group>"; };
-		63DAFF0B2AAEAF410049C243 /* vibraphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = vibraphone.mp3; path = "../../../../../Dropbox/Jessie Thing/Individual Tracks (Full)/vibraphone.mp3"; sourceTree = "<group>"; };
+		63DAFF072AAEAEEF0049C243 /* bass.synth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass.synth.mp3; sourceTree = "<group>"; };
+		63DAFF0B2AAEAF410049C243 /* vibraphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vibraphone.mp3; sourceTree = "<group>"; };
 		63EE580E2A680651001EF776 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
