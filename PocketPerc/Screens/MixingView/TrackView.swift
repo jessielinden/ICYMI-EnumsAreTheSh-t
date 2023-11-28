@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TrackView: View {
+    @Environment(\.soloMode) var soloMode
     @ObservedObject var track: AudioEnginePlayer
     @Binding var soloed: Bool
     let trackName: String
@@ -28,6 +29,7 @@ struct TrackView: View {
 
             HStack {
                 TrackControls.mute($track.isMuted)
+                    .allowsHitTesting(!soloMode.isOn || (soloMode.isOn && soloed))
                 
                 TrackControls.solo($soloed)
 

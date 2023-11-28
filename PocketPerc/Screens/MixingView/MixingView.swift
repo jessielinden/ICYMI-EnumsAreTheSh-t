@@ -62,6 +62,7 @@ struct MixingView: View {
         }
         .padding()
         .edgesIgnoringSafeArea(.bottom)
+        .environment(\.soloMode, mixer.soloMode)
     }
 }
 
