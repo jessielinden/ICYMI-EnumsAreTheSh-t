@@ -5,7 +5,7 @@
 //  Created by Jessica Linden on 9/11/23.
 //
 
-import Foundation
+import SwiftUI
 
 enum SoloMode {
     case off(Set<Track> = [])
@@ -26,6 +26,11 @@ enum SoloMode {
         }
     }
     
+    var isOn: Bool {
+        guard case .on(_) = self else { return false }
+        return true
+    }
+    
     mutating func toggle() {
         switch self {
         case .off(let tracks): self = .on(tracks)
@@ -39,5 +44,22 @@ enum SoloMode {
     
     mutating func insert(_ track: Track) {
        tracks.insert(track)
+    }
+}
+
+/// Used in ``TrackView`` to determine mute button functionality.
+private struct SoloModeEnvironmentKey: EnvironmentKey {
+    static var defaultValue: SoloMode = .off()
+}
+
+extension EnvironmentValues {
+    var soloMode: SoloMode {
+        get {
+            return self[SoloModeEnvironmentKey.self]
+        }
+        
+        set {
+            self[SoloModeEnvironmentKey.self] = newValue
+        }
     }
 }
