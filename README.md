@@ -2,7 +2,7 @@
 
 I created this app to explore the boundaries of enums in SwiftUI! It serves as a companion to my talk called ICYMI: Enums Are The Sh*t.
 
-[You can watch it here](https://www.youtube.com/watch?v=J4s3mraKcag&t=2s)
+[You can watch it here](https://www.youtube.com/watch?v=EANs31LTH6A)
 
 ## Topic Highlights
 - Representing State
@@ -32,5 +32,6 @@ I found Kodeco's [AVAudioEngine tutorial](https://www.kodeco.com/21672160-avaudi
 ## Please note
 - You are welcome to use any of this code per the MIT license.
 - I own the music.
-- This is thoroughly a sample app, but I would ship a lot of this code. More than I expected to. That being said, there are questions and loose ends in it, because it is an exploration. Keep that in mind, and if anything seems questionable, by all means question it! Including to me if you wish.
+- This is thoroughly a sample app, but I would ship a lot of this code. More than I expected to. That being said, there are questions and loose ends in it, because it is an exploration. Keep that in mind, and if anything seems questionable, by all means question it! Including to me if you'd like.
+- The one major issue with the app is that the tracks do not stay in sync, especially when there are more than a handful. If you're interested in improving that, please let me know/go for it!
 - I used Xcode 15 and iOS 17 for this project.
